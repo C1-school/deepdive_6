@@ -111,6 +111,10 @@ _기울임_
 
 `git revert HEAD`
 
+## "LF will be replaced by CRLF the next time Git touches it" 오류
+
+`git config core.eol nativ`
+
 ## 자주쓰는것 정의하기
 
 <pre>
