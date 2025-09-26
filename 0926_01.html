@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    div {
+        padding: 1rem;
+    }
+    .grand-parent {
+        width: 300px;
+        outline: 2px solid red;
+    }
+
+    .grand-parent div {
+        font-style: italic;
+    
+    }
+
+    /* ' ' : 하위요소 선택자 */
+    .grand-parent span {
+        background-color: gold;
+    
+    
+    }
+
+    /* '>' : 자식요소 선택자 */
+    .grand-parent > span {
+        color: tomato;
+        font-size: 2em;
+    
+    }
+
+    /* '+' : 형제요소 선택자 */
+    .parent + div {
+       background-color: gray;
+    
+    }
+    
+    .parent {
+        outline: 2px solid olive;
+    }
+
+    .child {
+        outline: 2px solid dodgerblue;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="grand-parent">
+        Grand-parent
+        <span>SPAN 1</span>
+        <div class="parent">
+            parent
+            <div class="child">
+                Child
+            </div>
+            <div class="second-child">
+                second-child
+                <span>SPAN</span>
+            </div>
+        </div>
+        <div class="parent">
+            parent
+            <div class="child">
+                Child
+            </div>
+            <div class="second-child">
+                second-child
+                <span>SPAN</span>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
