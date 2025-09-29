@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 만들기</title>
+    <style>
+        .profile {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 20px
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .profile:hover img {
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="profile">
+       <img src="./images/profile_0.jpg" alt="프로필 1"> 
+    </div>
+    <div class="profile">
+       <img src="./images/full_bg_h1.jpg" alt="프로필 2"> 
+    </div>
+</body>
+</html>
