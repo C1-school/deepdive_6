@@ -6,12 +6,26 @@
     <title>Naver-Join</title>
     <style>
         section {
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
+
+            /* body 기준, 가로축 중앙 오도록 정렬*/
+            margin: auto;
         }
 
         section > header {
-            position: relative;
             display: flex;
+
+            /* 메인축 (가로축) 정렬 : 아이템 2개가 가로 양 끝으로 붙도록 */
+            justify-content: space-between;
+            /* 교차축 (세로축) 정렬: 아이템들이 세로 기준 가운데로 오도록 함 */
+            align-items: center;
+        }
+
+        section > header > h2 {
+            display: flex;
+
+            /* 교차축 (세로축) 정렬: 아이템들이 세로 기준 가운데로 오도록 함 */
             align-items: center;
         }
 
@@ -19,24 +33,21 @@
             color: green;
         }
 
-        section > header > a.open {
+        section > header > h2 > span {
+            /* 왼쪽, 오른쪽 마진 10px */
+            margin: 0 10px 0 10px;
+        }
+
+        section > header > h2 > a.open {
             color: gray;
-            margin-left: 10px;
+            font-size: 0.7em;
             text-decoration: none;
         }
 
         section > header > a.kid {
-            box-sizing: border-box;
-            width: 150px;
-            height: 50px;
+            width: 120px;
+            height: 20px;
             padding: 10px;
-
-            /* 
-            가장 가까운 positioned 조상 요소
-            (position이 static이 아닌 요소)를 기준으로 위치 
-            */
-            position: absolute;
-            right: 0%;
 
             color: black;
             border: 1px solid black;
@@ -44,16 +55,20 @@
             text-decoration: none;
         }
 
-        section > div {
+        section > div.article {
             width: 100%;
             height: 200px;
+            padding: 10px;
+            box-sizing: border-box;
+            
             border: 1px solid black;
             border-radius: 10px;
+
+            /* y축만 스크롤되어 오버플로우된 내용을 볼 수 있음*/
             overflow-y: scroll;
-            box-sizing: border-box;
         }
 
-        section > div > div > span {
+        section > div.article > div.partition > span.title-inside {
             font-size: 1.1em;
             font-weight: 800;
         }
@@ -67,19 +82,19 @@
             <h2>
                 <strong>[필수]</strong>
                 <span>개인정보 수집 및 이용</span>
+                <a href="#" class="open">전체 ></a>
             </h2>
-            <a href="#" class="open">전체 ></a>
             <a href="#" class="kid">
                 🧒 어린이용 안내
             </a>
         </header>
 
-        <div>
+        <div class="article">
             <p>
                 개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
             </p>
 
-            <div>
+            <div class="partition">
                 <span class="title-inside">
                     1. 수집하는 개인정보
                 </span> 
@@ -129,7 +144,7 @@
                 </p>
             </div>
 
-            <div>
+            <div class="partition">
                 <span class="title-inside">
                     2. 수집한 개인정보의 이용
                 </span>
@@ -147,8 +162,8 @@
                 </p>
             </div>
 
-            <div>
-                <span class="title">
+            <div class="partition">
+                <span class="title-inside">
                     3. 개인정보의 보관기간
                 </span>
                 <p>
@@ -173,7 +188,7 @@
                     로그인 기록: 3개월<br>
                 </p>
             </div>
-            <div>
+            <div class="partition">
                 <span class="title-inside">
                     4. 개인정보 수집 및 이용 동의를 거부할 권리
                 </span>
