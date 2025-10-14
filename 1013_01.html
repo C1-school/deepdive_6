@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .btn-ham {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-ham:hover {
+            background-color: #f3f3f3;
+        }
+
+        .btn-ham .line {
+            width: 28px;
+            height: 2px;
+            background-color: #222;
+            display: block;
+        }
+    </style>
+    
+</head>
+<body>
+    <button class="btn-ham">
+        <span class="blind">메뉴 열기</span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+    </button>
+</body>
+</html>

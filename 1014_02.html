@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --red: #772222;
+            --blue: #2a7b9b;
+            --purple: #a053ed;
+            --gra1: linear-gradient(90deg, #2a7b9b 20%, #a053ed 100%);
+            --gra2: radial-gradient(circle, var(--blue), var(--purple) 100%);
+            --text-l: 30px;
+            --text-m: 24px;
+            --text-s: 14px;
+        }
+
+        .box1 {
+            background-color: var(--red);
+        }
+
+        .box2{
+            color: var(--red);
+            font-size: var(--text-l);
+            background-image: var(--gra2);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">Hello world</div>
+    <div class="box2">Hello world</div>
+    <script>
+        const box = document.querySelector(".box")
+        box.style.color = 'tomato'
+        </script>
+</body>
+</html>
