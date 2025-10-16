@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Basic</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cappuchino Latte</h1>
+        <h2>부드러운 거품의 카푸치노를 만나보세요</h2>
+
+        <p class="price">0</p>
+
+        <h3>수량을 선택하세요</h3>
+        <div class="count-container">
+            <button type="button" id="decrease">-</button>
+            <span id="number">1</span>
+            <button type="button" id="increase">+</button>
+        </div>
+
+        <button type="button" id="order">Add to Order</button>
+
+        <div class="total-container">
+            <h4>Total price</h4>
+            <strong id="price-total">0</strong>
+        </div>
+    </div>
+
+    <script>
+        // 변수 초기화
+        const decrease = document.getElementById('decrease');
+        const increase = document.getElementById('increase');
+        const unitPrice = document.querySelector('.price');
+        const totalPrice = document.getElementById('price-total');
+        const num = document.getElementById('number')
+
+        const order = document.getElementById('order')
+
+        // price 값 : 4500원에서 4800원으로 변경
+        let price = 4800;
+        let count = 1;
+        let total_price = price * count;
+
+        // 문서 초기화
+        totalPrice.textContent = total_price.toLocaleString();
+        unitPrice.textContent = price.toLocaleString();
+        num.textContent = count;
+
+        // 수량 카운트
+        decrease.addEventListener('click', () => {
+            if (count > 1){
+                count -= 1
+                total_price = price * count;
+
+                num.textContent = count;
+                totalPrice.textContent = total_price.toLocaleString();
+            }
+            else {
+                alert('최소 수량입니다.')
+            }
+        })
+
+        increase.addEventListener('click', () => {
+            count += 1
+            total_price = price * count;
+            num.textContent = count;
+            totalPrice.textContent = total_price.toLocaleString();
+        })
+
+        // 주문하기 버튼 클릭시 계산하기
+        order.addEventListener('click', () => {
+            alert
+            (`장바구니에 총 ${count}개의 제품이 담겼습니다.\n총 금액은 ${total_price.toLocaleString()}원입니다.`)
+            location.reload(true);
+        })
+    </script>
+</body>
+
+</html>
