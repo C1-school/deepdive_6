@@ -9,8 +9,27 @@
 
 <body>
     <script>
-    
-    // 1. 숫자가 짝수인지 홀수인지 판별하는 함수
+        
+    // 1. 점수를 입력받아 학점을 반환하는 함수
+    function getGrade(score) {
+        if (score >= 90) {
+            return "A학점";
+        } else if (score >= 80) {
+            return "B학점";
+        } else if (score >= 70) {
+            return "C학점";
+        } else {
+            return "재수강";
+        }
+    }
+
+    console.log(getGrade(95)); // A학점
+    console.log(getGrade(82)); // B학점
+    console.log(getGrade(65)); // 재수강
+
+
+
+    // 2. 숫자가 짝수인지 홀수인지 판별하는 함수
     function isEven(num) {
         return num % 2 ? '홀수입니다' : '짝수입니다'
     }
@@ -19,13 +38,47 @@
     console.log(isEven(7)); // 홀수입니다
 
 
-    // 2. 이름을 받아서 인사하는 함수
+
+    // 3. 이름을 받아서 인사하는 함수
     function greet(name) {
         return `안녕하세요, ${name}님!`;
     }
 
     console.log(greet('시원')); // 안녕하세요, 시원님!
 
+
+
+    // 4. 구구단 출력 함수
+    function multiplyTable(num) {
+        let result = '';
+        for (let i = 1; i <= 9; i++) {
+            result += `${num} x ${i} = ${num * i}\n`;
+        }
+        return result;
+    }
+
+    console.log(multiplyTable(3));
+    /* 
+    3 x 1 = 3
+    3 x 2 = 6
+    ...
+    3 x 9 = 27
+    */
+
+
+
+    // 5. 여러 숫자를 더하는 함수
+    function addAll(...numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        return sum;
+    }
+
+    console.log(addAll(1, 2, 3)); // 6
+    console.log(addAll(5, 10, 15, 20)); // 50
+    console.log(addAll(100)); // 100
     </script>
 </body>
 </html>
