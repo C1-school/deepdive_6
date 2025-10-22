@@ -28,5 +28,3 @@ console.log(a <= b);
 // 일치연산자
 console.log(a === b); // 값과 데이터 타입을 모두 비교
 console.log(a !== b);
-
-// 논리연산자
