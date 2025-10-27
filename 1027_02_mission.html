@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input 요소 제어하기</title>
+    <link rel="stylesheet" href="1027_02_mission.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="number" id="num1" placeholder="숫자를 입력하세요" min="1" max="100">
+        +
+        <input type="number" id="num2" placeholder="숫자를 입력하세요" min="1" max="100">
+        =
+        <span id="result">0</span>
+        <button type="button" id="btn">계산하기</button>
+        <hr>
+        <span id="error"></span>
+    </div>
+
+    <script>
+        // Step 01 - 두수의 합을 구하시오
+        // Step 02 - 조건 : 1~100까지만 입력이 되도록, "1~100까지의 수만 입력하세요"
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const error = document.getElementById('error');
+
+        btn.addEventListener('click', () => {
+
+            // input에 값을 입력하지 않았거나,
+            // (복사/붙여넣기 등의 잘못된 방식으로) 문자열이 입력된 경우
+            if (num1.value === '' || num2.value === '') {
+                result.textContent = '?';
+                error.textContent = '값을 입력하지 않았거나, 숫자가 아닌 값을 입력했습니다.';
+            }
+
+            // input에 숫자가 제대로 들어온 경우
+            else {
+                const left = Number(num1.value);
+                const right = Number(num2.value);
+                if ((left>=1 && left<=100) && (right>=1 && right<=100)) {
+                    result.textContent = left + right;
+                    error.textContent = '값이 출력되었습니다.';
+                }
+                else {
+                    result.textContent = '?';
+                    error.textContent = '1~100까지의 숫자만 입력해야 합니다.';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
